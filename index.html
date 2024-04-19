@@ -19,50 +19,5 @@ function toggleDiv() {
   }
 }
 </script>
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-
-  {% if post.categories contains 'poem' %}
-    <div class="post-title">
-      <a href="{{ post.url | relative_url }}">
-      </a>
-    </div>
-  {% else %}
-    <h1 class="post-title">
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-  {% endif %}
-<div id="poem" style="display:block;">
-  {{ post.content }}
-</div>
-{% if post.layout contains 'poempic' %}
-<div id="pic" style="display:none";>
-  <p>
-    <img src="/assets/images/{{ post.title }}.jpeg">
-  </p>
-</div>
-{% endif %}
+<article class="home">
 </article>
-</div>
-<div style="text-align:right;">
-{% if post.layout contains 'poempic' %}
-<div style="text-align:right;">
-  <a id="toggleText" href="#" onclick="toggleDiv()">pic</a>
-</div>
-{% endif %}
-{% endfor %}
-{% if paginator.next_page %}
-<a href="{{ paginator.next_page_path | relative_url }}">older</a>
-{% else %}
-<span>older</span>
-{% endif %}
-<span>|</span>
-{% if paginator.previous_page %}
-<a href="{{ paginator.previous_page_path | prepend: relative_url }}">newer</a>
-{% else %}
-<span>newer</span>
-{% endif %}
-</div>
