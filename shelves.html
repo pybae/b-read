@@ -14,15 +14,8 @@ title: home
       </a>
     </h1>
     <div id="poem" style="display:block;">
-      {{ post.content }}
+      {{ post.excerpt }}
     </div>
-    {% if post.layout contains 'poempic' %}
-    <div id="pic" style="display:none";>
-      <p>
-      <img src="/assets/images/{{ post.title }}.jpeg">
-      </p>
-    </div>
-    {% endif %}
   </div>
   {% endfor %}
 
