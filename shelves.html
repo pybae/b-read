@@ -1,0 +1,36 @@
+---
+layout: default
+title: home
+---
+
+<article class="post">
+  <p style="font-size:4rem;text-align:center;">b | read</p>
+
+  <div class="posts">
+    {% for post in site.posts %}
+    <h1 class="post-title">
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+    <div id="poem" style="display:block;">
+      {{ post.content }}
+    </div>
+    {% if post.layout contains 'poempic' %}
+    <div id="pic" style="display:none";>
+      <p>
+      <img src="/assets/images/{{ post.title }}.jpeg">
+      </p>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+
+</article>
+
+<div style="text-align:right;">
+  <a href="/">home</a>
+  <span>|</span>
+  <span>shelves</span>
+</div>
