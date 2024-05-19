@@ -34,3 +34,5 @@ sass:
 
 # Custom vars
 version: 3.0.0
+
+future: true
